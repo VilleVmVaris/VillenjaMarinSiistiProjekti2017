@@ -14,7 +14,25 @@ public class CubeMover : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        transform.position += new Vector3(1, 2, 3) * Time.deltaTime * speed;
-		
-	}
+        if (Input.GetKey(KeyCode.Space))
+        {
+
+            transform.position += new Vector3(1, 2, 3) * Time.deltaTime * speed;
+        }
+
+        if(Input.GetKey(KeyCode.Backspace))
+        {
+            transform.position -= new Vector3(1, 2, 3) * Time.deltaTime * speed;
+        }
+
+        if(Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Rotate(0, 1, 0);
+        }
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.Rotate(0, -1, 0);
+        }
+    }
 }
